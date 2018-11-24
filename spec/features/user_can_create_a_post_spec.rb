@@ -3,15 +3,10 @@ require 'rails_helper'
 feature 'Creating a post' do
   scenario 'it should show a post with a description and image' do
     log_in(email: 'test@test.com', password: 'testpassword')
-    click_link 'Post Item'
-    fill_in 'Description', with: 'Ralph Lauren Shirt'
-    fill_in 'Quality', with: 'Never worn'
-    fill_in 'postage details', with: 'Free'
-    attach_file('Image', "spec/files/images/rlshirt.jpg")
-    click_button 'Post Item'
-    expect(page).to have_content('Ralph Lauren Shirt')
-    expect(page).to have_content('Never worn')
-    expect(page).to have_content('Free')
+    create_post(description: 'ralphy shirt', quality: 'never worn', postage_details: 'free', image: "spec/files/images/rlshirt.jpg")
+    expect(page).to have_content('ralphy shirt')
+    expect(page).to have_content('never worn')
+    expect(page).to have_content('free')
     expect(page).to have_css("img[src*='rlshirt']")
   end
 end
