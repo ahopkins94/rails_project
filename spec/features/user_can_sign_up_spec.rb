@@ -7,6 +7,6 @@ feature 'Signing up' do
   end
   scenario 'it should raise an error if the email is already taken' do
     sign_up(username: 'testuser', email: 'test@test.com', password: 'testpassword')
-    expect(page).to have_content 'error'
+    expect(page).to have_content 'Email has already been taken'
   end
 end
