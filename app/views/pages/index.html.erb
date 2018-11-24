@@ -8,6 +8,12 @@
       <pre><%= post.description %></pre>
       <pre><%= post.quality %></pre>
       <pre><%= post.postage_details %></pre>
+      <% if post.image.attached? %>
+           Image:
+          <br>
+          <%= image_tag post.image %>
+          <br>
+<% end %>
     Posted at: <%= post.updated_at.strftime("%Y-%m-%d %k:%M")%>
   <% end %>
 <% else %>
