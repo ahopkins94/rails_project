@@ -6,7 +6,8 @@ feature 'Creating a post' do
     click_link 'Post Item'
     fill_in 'Description', with: 'Ralph Lauren Shirt'
     fill_in 'Quality', with: 'Never worn'
-    fill_in 'Postage Details', with: 'Free'
+    fill_in 'postage details', with: 'Free'
+    attach_file('Image', "spec/files/images/rlshirt.jpg")
     click_button 'Post Item'
     expect(page).to have_content('Ralph Lauren Shirt')
     expect(page).to have_content('Never worn')

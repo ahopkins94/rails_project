@@ -1,0 +1,11 @@
+<%= form_for [@user, @post] do |form| %>
+  <%= form.label :description %>
+  <%= form.text_area :description, placeholder: 'description' %>
+  <%= form.label :quality %>
+  <%= form.text_area :quality, placeholder: 'quality' %>
+  <%= form.label :postage_details %>
+  <%= form.text_area :postage_details, placeholder: 'postage details' %>
+  <%= form.label :image %>
+  <%= form.file_field :image, accept: 'image/jpg' %>
+  <%= form.submit "Post Item" %>
+<% end %>
